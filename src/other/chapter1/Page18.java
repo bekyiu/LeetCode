@@ -34,6 +34,7 @@ public class Page18
 			{
 				qmax.pollFirst();
 			}
+			//i == w - 1的时候才形成第一个窗口
 			if (i >= w - 1)
 			{
 				result[index++] = arr[qmax.peekFirst()];
