@@ -8,4 +8,60 @@ public class Page42
 	{
 		
 	}
+	
+	//只写双链表版本
+	class DoubleNode
+	{
+		public int value;
+		public DoubleNode last;
+		public DoubleNode next;
+		
+		public DoubleNode(int value)
+		{
+			this.value = value;
+		}
+	}
+	
+	public static DoubleNode removeLstKthNode(DoubleNode head, int k)
+	{
+		if(head == null || k < 1)
+		{
+			return null;
+		}
+		DoubleNode cur = head;
+		while(cur != null)
+		{
+			k--;
+			cur = cur.next;
+		}
+		if(k > 0)
+		{
+			return head;
+		}
+		if(k == 0)
+		{
+			head = head.next;
+			//注意!!
+			head.last = null;
+			return head;
+		}
+		if(k < 0)
+		{
+			cur = head;
+			k++;
+			while(k != 0)
+			{
+				k++;
+				cur = cur.next;
+			}
+			DoubleNode th = cur.next.next;
+			cur.next = th;
+			//注意这个if!!!
+			if(th != null)
+			{
+				th.last = cur;
+			}
+		}
+		return head;
+	}
 }
