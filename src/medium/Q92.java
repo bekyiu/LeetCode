@@ -8,14 +8,42 @@ package medium;
  */
 public class Q92
 {
-//    public ListNode reverseBetween(ListNode head, int m, int n) 
-//    {
-//    	ListNode n1 = head;
-//        for(int i = 1; i < n; i++)
-//        {
-//        	n1 = n1.next;
-//        }
-//    }
+	public ListNode reverseBetween(ListNode head, int m, int n)
+	{
+		ListNode cur = head;
+		int len = 0;
+		ListNode fpre = null;
+		ListNode tpos = null;
+		while (cur != null)
+		{
+			len++;
+			fpre = len == m - 1 ? cur : fpre;
+			tpos = len == n + 1 ? cur : tpos;
+			cur = cur.next;
+		}
+		if (m > n || m < 1 || n > len)
+		{
+			return head;
+		}
+
+		cur = fpre == null ? head : fpre.next;
+		ListNode node2 = cur.next;
+		cur.next = tpos;
+		ListNode next = null;
+		while (node2 != tpos)
+		{
+			next = node2.next;
+			node2.next = cur;
+			cur = node2;
+			node2 = next;
+		}
+		if (fpre != null)
+		{
+			fpre.next = cur;
+			return head;
+		}
+		return cur;
+	}
 	
 	public static void main(String[] args)
 	{
