@@ -28,6 +28,7 @@ public class Q92
 
 		cur = fpre == null ? head : fpre.next;
 		ListNode node2 = cur.next;
+		//反转后cur的后继是tpos
 		cur.next = tpos;
 		ListNode next = null;
 		while (node2 != tpos)
@@ -39,6 +40,7 @@ public class Q92
 		}
 		if (fpre != null)
 		{
+			//指向翻转前, 待翻转区域的最后一个结点
 			fpre.next = cur;
 			return head;
 		}
