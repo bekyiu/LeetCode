@@ -54,7 +54,7 @@ public class Page77
 			{
 				if(next.val == cur.val)
 				{
-					pre.next = cur.next;
+					pre.next = next.next;
 				}
 				else
 				{
