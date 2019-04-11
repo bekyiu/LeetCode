@@ -1,6 +1,6 @@
 package other.chapter2;
 
-public class Q87
+public class Page87
 {
 	class ListNode
 	{
