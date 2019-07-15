@@ -24,7 +24,7 @@ public class Page245
 		for(int k = 0; k < dpf.length; k++)
 		{
 			dpf[k][k] = arr[k];
-			dps[k][k] = 0;
+//			dps[k][k] = 0;
 		}
 		// 从对角线开始往右上角推
 		for(int k = 0; k < arr.length - 1; k++)
