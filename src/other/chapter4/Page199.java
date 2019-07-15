@@ -10,9 +10,30 @@ public class Page199
 	public static void main(String[] args)
 	{
 		long t1 = System.nanoTime();
-		int res = dpMethod(new int[] {5, 10, 25, 1}, 50, 0);
+		int res = dpMethod2(new int[] {5, 10, 25, 1}, 50, 0);
 		long t2 = System.nanoTime();
 		System.out.println(res + ", time: " + (t2 - t1));
+	}
+	
+	public static int dpMethod2(int[] arr, int aim, int start)
+	{
+		int[][] dp = new int[arr.length + 1][aim + 1];
+		dp[arr.length][0] = 1;
+		for(int i = arr.length - 1; i >= 0; i--)
+		{
+			for(int j = 0; j < dp[0].length; j++)
+			{
+				if(j - arr[i] >= 0)
+				{
+					dp[i][j] = dp[i + 1][j] + dp[i][j - arr[i]];
+				}
+				else
+				{
+					dp[i][j] = dp[i + 1][j];
+				}
+			}
+		}
+		return dp[0][aim];
 	}
 	
 	public static int dpMethod(int[] arr, int aim, int start)
