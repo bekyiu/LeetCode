@@ -10,11 +10,34 @@ public class Page199
 	public static void main(String[] args)
 	{
 		long t1 = System.nanoTime();
-		int res = fun(new int[] {5, 10, 25, 1}, 2000, 0);
+		int res = dpMethod(new int[] {5, 10, 25, 1}, 50, 0);
 		long t2 = System.nanoTime();
 		System.out.println(res + ", time: " + (t2 - t1));
 	}
 	
+	public static int dpMethod(int[] arr, int aim, int start)
+	{
+		int[][] dp = new int[arr.length + 1][aim + 1];
+		dp[arr.length][0] = 1;
+		for(int i = arr.length - 1; i >= 0; i--)
+		{
+			for(int j = 0; j < dp[0].length; j++)
+			{
+				int sum = 0;
+				int k = 0;
+				do
+				{
+					sum += dp[i + 1][j - arr[i] * k];
+					k++;
+				}while(j - arr[i] * k >= 0);
+				dp[i][j] = sum;
+			}
+		}
+		return dp[0][aim];
+	}
+	
+	
+	// 记忆搜索
 	public static int fun(int[] arr, int aim, int start)
 	{
 		int sum = 0;
@@ -28,14 +51,15 @@ public class Page199
 			String key = (start + 1) + "_" + (aim - arr[start] * i);
 			if(!cache.containsKey(key))
 			{
-				int count = fun(arr, aim - arr[start] * i, start + 1);
-				cache.put(key, count);
+				cache.put(key, fun(arr, aim - arr[start] * i, start + 1));
 			}
 			sum += cache.get(key);
 		}
 		return sum;
 	}
-	//
+	
+	// 纯暴力递归
+	// 利用从start位置(数组的索引)开始的钱, 凑出aim
 	public static int fun0(int[] arr, int aim, int start)
 	{
 		int sum = 0;
