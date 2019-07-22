@@ -25,7 +25,7 @@ public class Q98
     public boolean isValidBST(TreeNode root) {
     	if(root == null)
     	{
-    		return false;
+    		return true;
     	}
     	Long min = Long.MIN_VALUE;
         Deque<TreeNode> stack = new ArrayDeque<>();
