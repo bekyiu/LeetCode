@@ -50,4 +50,11 @@ public class Page267
 			j--;
 		}
 	}
+	
+	public static void rotate1(char[] chas, int size)
+	{
+		reverse(chas, 0, size - 1);
+		reverse(chas, size, chas.length - 1);
+		reverse(chas, 0, chas.length - 1);
+	}
 }
