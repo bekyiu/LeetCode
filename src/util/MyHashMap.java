@@ -1,4 +1,4 @@
-package util.tree;
+package util;
 
 public class MyHashMap<K, V>
 {
@@ -124,17 +124,20 @@ public class MyHashMap<K, V>
 	
 	public static void main(String[] args)
 	{
-		MyHashMap<Integer, String> map = new MyHashMap<>();
-		for(int i = 0; i < 20; i++)
-		{
-			map.put(i, String.valueOf((char)('a' + i)));
-		}
-		System.out.println(map);
-		System.out.println(map.get(15));
-		System.out.println(map.get(1));
+//		MyHashMap<Integer, String> map = new MyHashMap<>();
+//		for(int i = 0; i < 20; i++)
+//		{
+//			map.put(i, String.valueOf('a' + "_" + i));
+//		}
+//		System.out.println(map);
+//		System.out.println(map.get(15));
+//		System.out.println(map.get(1));
 //		for(int i = 5; i < 50; i++)
 //		{
 //			System.out.println(i + ", " + (new Integer(i).hashCode() & 15));
 //		}
+		
+		System.out.println(new Object().hashCode());
+		System.out.println(new Object().hashCode());
 	}
 }
