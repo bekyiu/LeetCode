@@ -1,6 +1,6 @@
 package other.chapter7;
 
-public class Page346
+public class Page348
 {
 	public static void main(String[] args)
 	{
