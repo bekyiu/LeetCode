@@ -3,12 +3,14 @@ package easy;
 import java.util.PriorityQueue;
 
 // Page366 第k小
+
+// 这个题有点迷
 public class Q703
 {
 	// 小根堆
 	private PriorityQueue<Integer> q;
 	private int k;
-	// nums + 1 >= k
+	// nums + 1 >= k, 也就是说可能给4个数求第5大
 	public Q703(int k, int[] nums)
 	{
         q = new PriorityQueue<>(k);
