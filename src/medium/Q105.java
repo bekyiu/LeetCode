@@ -36,7 +36,7 @@ public class Q105
     	}
     	// 找到node在中序遍历中的位置
     	int root = 0;
-    	for(root = inStart; root < inEnd; root++)
+    	for(root = inStart; root <= inEnd; root++)
     	{
     		if(pre[preStart] == in[root])
     		{
