@@ -14,6 +14,7 @@ public class ReverseList
 			next = null;
 		}
 	}
+	
     public ListNode reverseList(ListNode head) 
     {
         if(head == null)
