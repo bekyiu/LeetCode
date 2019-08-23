@@ -5,20 +5,21 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Deque;
 
-class TreeNode
-{
-	int val;
-	TreeNode left;
-	TreeNode right;
 
-	TreeNode(int x)
-	{
-		val = x;
-	}
-}
 
 public class ZhiPrint
 {
+	class TreeNode
+	{
+		int val;
+		TreeNode left;
+		TreeNode right;
+
+		TreeNode(int x)
+		{
+			val = x;
+		}
+	}
 	// 思路还是带换行的层序遍历
 	public ArrayList<ArrayList<Integer>> print(TreeNode root)
 	{
