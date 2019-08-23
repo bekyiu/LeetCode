@@ -19,9 +19,7 @@ class TreeNode
 
 public class ZhiPrint
 {
-	public static void main(String[] args)
-	{
-	}
+	// 思路还是带换行的层序遍历
 	public ArrayList<ArrayList<Integer>> print(TreeNode root)
 	{
 		ArrayList<ArrayList<Integer>> list = new ArrayList<>();
