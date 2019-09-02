@@ -1,16 +1,9 @@
 package jzoffer;
 
 // 子数组的最大和
-public class Page239
+public class FindGreatestSumOfSubArray
 {
-	public static void main(String[] args)
-	{
-		Page239 obj = new Page239();
-		int[] arr = new int[] {1, -2, 3, 10, -4, 7, 2, -5};
-		int a = obj.dpMethod(arr);
-		System.out.println(a);
-	}
-	
+	// 递归解法
 	public int solution(int[] arr)
 	{
 		int max = Integer.MIN_VALUE;
@@ -38,8 +31,8 @@ public class Page239
 		return pre + arr[end];
 	}
 	
-	//dp
-	public int dpMethod(int[] arr)
+	//dp 解法
+	public int findGreatestSumOfSubArray(int[] arr)
 	{
 		int[] dp = new int[arr.length];
 		dp[0] = arr[0];

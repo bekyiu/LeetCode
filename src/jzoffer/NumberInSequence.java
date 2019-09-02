@@ -1,10 +1,10 @@
 package jzoffer;
 
-public class Page244
+public class NumberInSequence
 {
 	public static void main(String[] args)
 	{
-		Page244 obj = new Page244();
+		NumberInSequence obj = new NumberInSequence();
 //		System.out.println(obj.solution(16));
 		for(int i = 0; i < 1000; i++)
 		{
@@ -28,7 +28,7 @@ public class Page244
 				break;
 			}
 		}
-		// 倒数第k位数(从零开始)就是结果
+		// num的倒数第k位数(从零开始)就是结果
 		int k = count - 1 - n;
 		int res = 0;
 		while(k >= 0)
