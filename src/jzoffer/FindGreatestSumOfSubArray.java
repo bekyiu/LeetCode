@@ -24,6 +24,7 @@ public class FindGreatestSumOfSubArray
 			return arr[0];
 		}
 		int pre = p(arr, end - 1);
+		// 此时arr[end]类加上pre会比arr[end]本身还小
 		if(pre < 0)
 		{
 			return arr[end];
